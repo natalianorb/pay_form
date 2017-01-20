@@ -1,0 +1,89 @@
+doctype html
+html
+	head
+		meta(charset="UTF-8")
+		title Форма оплаты
+		meta(http-equiv="X-UA-Compatible" content="IE=edge, chrome=1")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		link(href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet")
+		link(rel="stylesheet" href="./styles/styles.min.css")
+	body
+		div.container
+			h1.heading Billing Info
+			p.text Choose a payment option below and fill out the appropriate information
+
+			nav.nav
+				a(class="nav__item --active" href="#creditcard")
+					span.nav__img-wrap
+						img.nav__img(src='./assets/images/credit.png')
+					h2.nav__heading Credit Card
+				a(class="nav__item" href="#giftcard")
+					span.nav__img-wrap
+						img.nav__img(src='./assets/images/gift.png')
+					h2.nav__heading Gift Card
+				a(class="nav__item" href="#paypal")
+					span.nav__img-wrap
+						img.nav__img(src='./assets/images/paypal.png')
+					h2.nav__heading Paypal
+
+
+			form#creditcard(class="form --visible")
+				include form_begin
+				div.form__block
+					h3.form__heading
+						span.form__p-number 2
+						|Credit card info
+					div.form__field
+						label.form__label(for="nameoncard") name on card
+						input.form__input(type="text" id="nameoncard" required)
+					div.form__field
+						label.form__label(for="cardNo") card number
+						input.form__input(type="text" id="cardNo" required placeholder="0000 0000 0000 0000" pattern="/[0-9]{4} [0-9]{4} [0-9]{4} ([0-9]{4})?/g")
+					div.form__field--col
+						label.form__label(for="cvv") cvv number
+						input.form__input--small(type="number" id="cvv" required min="0" max="999" step="1" placeholder="000")
+						div.tooltip
+							a.tooltip__link(href="#")
+								img.tooltip__link-img(src="./assets/images/question.png")
+							img.tooltip__img(src="./assets/images/cvv.png")
+					div.form__field--col
+						label.form__label(for="expmonth") exp.month
+						select.form__input--small(id="expmonth" required placeholder="month")
+							option(selected="selected" disabled="disabled") month
+							option jan
+							option feb
+					div.form__field--col
+						label.form__label(for="expyear") exp.year
+						select.form__input--small(id="expyear" required)
+							option(selected="selected" disabled="disabled") year
+							option 2017
+							option 2018
+
+
+
+			form#giftcard.form
+				include form_begin
+				div(class="form__block")
+					h3.form__heading
+						span.form__p-number 2
+						|Gift card info
+					div.form__field
+						label.form__label(for="giftcardNo") card number
+						input.form__input(type="text" id="giftcardNo" required)
+					div.form__field--col
+						label.form__label(for="giftexpmonth") exp.month
+						select.form__input--small(id="giftexpmonth" required)
+							option(selected="selected" disabled="disabled") month
+							option jan
+							option feb
+					div.form__field--col
+						label.form__label(for="giftexpyear") exp.year
+						select.form__input--small(id="giftexpyear" required)
+							option(selected="selected" disabled="disabled") year
+							option 2017
+							option 2018
+
+			form#paypal.form
+				include form_begin
+
+		script(src="./scripts/build.js")

@@ -1,0 +1,43 @@
+@include new('nav') {
+  padding: 30px 0;
+  text-align: center;
+  @include breakpoint(30em) {
+  }
+  @include breakpoint(48em) {
+  }
+
+  @include has('item') {
+    @extend %middle-inline-block;
+    width: 72px;
+    height: 50px;
+    margin: 0 7px;
+    padding: 10px;
+    text-align: center;
+    font-size: 7px;
+    text-decoration: none;
+    color: $dark-blue;
+    background-color: $light-grey;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    &:hover {
+      border: 2px solid $blue;
+    }
+
+    &.--active{
+      border: 2px solid $blue;
+      background-color: $white;
+    }
+    @include breakpoint(30em) {
+    }
+  }
+
+  @include has('img-wrap') {
+    @extend .img-wrap;
+    width: 36px;
+    margin: 5px auto;
+  }
+  @include has('img') {
+    @extend .img;
+  }
+
+}

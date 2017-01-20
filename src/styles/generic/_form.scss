@@ -1,0 +1,62 @@
+@include new('form') {
+  display: none;
+  text-align: center;
+  margin: 0 auto;
+  padding: 29px 0;
+  color: $dark-blue;
+  &.--visible {
+    display: block;
+  }
+
+  @include has('block') {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 25px;
+    text-align: left;
+  }
+
+  @include has('heading') {
+    margin: 0 0 10px;
+    padding: 0 4px;
+    font-size: 13px;
+    text-transform: capitalize;
+  }
+
+  @include has('p-number') {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 16px;
+    font-size: 8px;
+    line-height: 16px;
+    text-align: center;
+    margin-right: 7px;
+    border-radius: 50%;
+    border: 1px solid $dark-blue;
+  }
+
+  @include has('field') {
+    position: relative;
+    padding: 12px 4px;
+    box-sizing: border-box;
+    @include when('col') {
+      display: inline-block;
+    }
+  }
+
+  @include has('label') {
+    display: block;
+    text-transform: uppercase;
+    font-size: 8px;
+  }
+
+  @include has('input') {
+    width: 256px;
+    margin: 6px 0 0;
+    padding: 0 0 0 8px;
+    border-radius: 3px;
+    border: 1px solid $grey;
+    @include when('small') {
+      width: 80px;
+    }
+  }
+}

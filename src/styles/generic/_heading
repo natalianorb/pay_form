@@ -1,0 +1,7 @@
+@include new('heading') {
+  text-align: center;
+  text-transform: capitalize;
+  color: $dark-blue;
+  padding: 40px 0 0;
+  font-size: 21px;
+}

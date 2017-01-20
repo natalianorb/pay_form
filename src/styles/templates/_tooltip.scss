@@ -1,0 +1,17 @@
+@include new('tooltip') {
+  @include has('link') {
+    position: absolute;
+    top: 33px;
+    right: 10px;
+    &:hover {
+      + .tooltip__img {
+        display: inline;
+      }
+    }
+  }
+  @include has('img') {
+    display: none;
+    position: absolute;
+    bottom: 100%; left: 0;
+  }
+}

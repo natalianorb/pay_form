@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.js"],"names":["tabs","require"],"mappings":"AAAA,GAAIA,MAAOC,QAAQ,UACnBD","file":"main.js","sourcesContent":["var tabs = require('tabs.js');\r\ntabs();"]}
